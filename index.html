@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>soduko</title>
+</head>
+
+<body>
+    <div class="fullPage">
+        <!-- ******************************************************************* -->
+        <header>
+            <div>
+                <a id="signin" class="themeCell" onclick="signIn()">SIGN IN</a>
+            </div>
+            
+            <div id="welcome" style="display: none;">
+                <p id="welcomeUser" class="themeCell" style="cursor: default">welcome</p>
+            </div>
+
+            <div id="gameBar" style="display: none;">
+                <a class="themeCell" style="display: inline;" onclick="again()">AGAIN</a>
+                <a  class="themeCell" style="display: inline;" onclick="finish()">FINISH</a>
+            </div>
+            <div id="loseOrWin">
+                <a class="themeCell"  style="display: none;" onclick="closeWin()" id="win">WIN!!! click to close</a>
+                <a  class="themeCell"  style="display: none;" onclick="closeLose()" id="lose">LOSE!! click to close</a>
+            </div>
+
+           
+        </header>
+        <!-- ******************************************************************* -->
+        <nav>
+            nav
+        </nav>
+        <!-- ******************************************************************* -->
+        <section>
+            <div id="popup2" class="number-selector">
+            <!-- choosing number when click on cell in popup window  -->
+                <div class="popup">
+                    <div class="content">
+                        <button class="choosingButton" onclick="insertNum(1)">1</button>
+                        <button class="choosingButton" onclick="insertNum(2)">2</button>
+                        <button class="choosingButton" onclick="insertNum(3)">3</button>
+                        <br>
+                        <button class="choosingButton" onclick="insertNum(4)">4</button>
+                        <button class="choosingButton" onclick="insertNum(5)">5</button>
+                        <button class="choosingButton" onclick="insertNum(6)">6</button>
+                        <br>
+                        <button class="choosingButton" onclick="insertNum(7)">7</button>
+                        <button class="choosingButton" onclick="insertNum(8)">8</button>
+                        <button class="choosingButton" onclick="insertNum(9)">9</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="difficultyLevelSelectionWindow" class="difficultyLevelSelectionWindow" style="display: none;">
+                <h2 style="cursor: default;">choose difficulty</h2>
+                <img src="Difficulty1.png" alt="easy" onclick="chooseDificulty(1)"><br><h2>easy</h2>
+                <img src="Difficulty2.png" alt="medium" onclick="chooseDificulty(2)"><br><h2>medium</h2>
+                <img src="Difficulty3.png" alt="hard" onclick="chooseDificulty(3)"><br><h2>hard</h2>
+
+            </div>
+
+            <div id="userAndPasswordWindow" class="userAndPasswordWindow" style="display: none;">
+                        <input id="user" class="themeCell" type="text" placeholder="user name"><br><br>
+                        <input id="pass" class="themeCell" type="password" placeholder="password"><br><br>
+                        <button id="enter" class="themeCell" onclick="enterForDifficultyWindow()">ENTER</button>
+    
+            </div>
+            
+            <div class="board" id="board"></div>
+
+        
+
+        </section>
+        <!-- ******************************************************************* -->
+        <aside>
+            aside  
+        </aside>
+        <!-- ******************************************************************* -->
+        <footer>
+            footer
+        </footer>
+        <!-- ******************************************************************* -->
+    </div>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
