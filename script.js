@@ -20,7 +20,7 @@ let board = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
 //   * Functions for finding duplicate numbers in the board  *
 //   *********************************************************
 
-const hasErrorInRow = (row, col, num) => {
+const hasErrorInRow = (row, col, num) => {  //find duplicate in a row
   for (let i = 0; i < 9; i++) {
     if (board[row][i] === num && col !== i) {
       return [true, i];
@@ -29,7 +29,7 @@ const hasErrorInRow = (row, col, num) => {
   return [false];
 }
 
-const hasErrorInColumn = (row, col, num) => {
+const hasErrorInColumn = (row, col, num) => { //find duplicate in a column
   for (let i = 0; i < 9; i++) {
     if (board[i][col] === num && row !== i) {
       return [true, i];
@@ -38,7 +38,7 @@ const hasErrorInColumn = (row, col, num) => {
   return [false];
 }
 
-const hasErrorInSmallMat = (row, col, num) => {
+const hasErrorInSmallMat = (row, col, num) => {  //find duplicate in the small matrix
   const firstCubeIndex = {
     0: 0,
     1: 0,
@@ -67,7 +67,7 @@ const hasErrorInSmallMat = (row, col, num) => {
 }
 
 
-const hasError = (row, col, num) => {
+const hasError = (row, col, num) => {   //check for a duplicte for provided number
   return hasErrorInRow(row, col, num)[0] || hasErrorInColumn(row, col, num)[0] || hasErrorInSmallMat(row, col, num)[0];
 }
 
