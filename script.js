@@ -71,8 +71,8 @@ const hasError = (row, col, num) => {   //check for a duplicte for provided numb
   return hasErrorInRow(row, col, num)[0] || hasErrorInColumn(row, col, num)[0] || hasErrorInSmallMat(row, col, num)[0];
 }
 
-const getErrorCell = (row, col, num) => {
-  const errorInRow = hasErrorInRow(row, col, num)
+const getErrorCell = (row, col, num) => {            // check if the number enter by user allowed 
+  const errorInRow = hasErrorInRow(row, col, num)    //check dulicate in row
   if (errorInRow[0]) {
     return {
       row,
@@ -80,7 +80,7 @@ const getErrorCell = (row, col, num) => {
     };
   }
 
-  const errorInColumn = hasErrorInColumn(row, col, num)
+  const errorInColumn = hasErrorInColumn(row, col, num)  ////check dulicate in row
   if (errorInColumn[0]) {
     return {
       row: errorInColumn[1],
@@ -88,7 +88,7 @@ const getErrorCell = (row, col, num) => {
     };
   }
 
-  const errorInSmallMat= hasErrorInSmallMat(row, col, num)
+  const errorInSmallMat= hasErrorInSmallMat(row, col, num)  //check dulicate in row
   if (errorInSmallMat[0]) {
     return {
       row: errorInSmallMat[1],
@@ -101,7 +101,7 @@ const getErrorCell = (row, col, num) => {
 
 //************************************************************
 
-const rollNewNumber = () => {
+const rollNewNumber = () => {          //genarate random nuber 1-9
   steps++;
   return Math.floor(Math.random() * 9) + 1;
 }
@@ -199,7 +199,7 @@ const chooseDificulty = (level) => {
 }
 
 
-const selectNumberForCell = function (e) {
+const selectNumberForCell = function (e) { // on click event, fetching cordinates for popup and target id
   idCellEdit = e.target.id;
   e.stopPropagation();
 
@@ -209,7 +209,7 @@ const selectNumberForCell = function (e) {
   openPopup({ left, top });
 }
 
-const insertNum = (num) => {
+const insertNum = (num) => {                               //insertion of new number in cell (or not)
   const editedCell = document.getElementById(idCellEdit);
   const row = Number.parseInt(idCellEdit[0], 10);
   const column = Number.parseInt(idCellEdit[1], 10);
@@ -225,14 +225,14 @@ const insertNum = (num) => {
   closePopup();
 }
 
-const createInMemoryBoard = () => {
+const createInMemoryBoard = () => {                    //create board div in memory to pushh after into html
   const newGameBoard = document.createElement('div');
   newGameBoard.classList = 'board';
   newGameBoard.id = 'board';
   return newGameBoard;
 }
 
-const createCell = (row, column) => {
+const createCell = (row, column) => {      // create cell to append to main board
   const cell = document.createElement('a');
   cell.classList = 'cell';
   cell.id = `${row}${column}`;
@@ -250,8 +250,8 @@ const createCell = (row, column) => {
   return cell;
 }
 
-const setBoard = (board) => {
-  const htmlBorad = document.getElementById('board');
+const setBoard = (board) => {                           
+  const htmlBorad = document.getElementById('board');    
   htmlBorad.replaceWith(board);
 }
 
