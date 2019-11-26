@@ -1,5 +1,5 @@
 # golda
-A sudoku games.
+A sudoku game.
 Filling the sudoku table with smart algorithm.
 -random generated.
 -preventing stucks.
