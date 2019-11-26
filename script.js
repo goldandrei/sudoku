@@ -164,7 +164,7 @@ const logInUser = (userInput, passInput) => {
 
 
 
-const chooseDificulty = (level) => {
+const chooseDificulty = (level) => {             //reveal part of the board according to dificulty level
   board = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
              [0, 0, 0, 0, 0, 0, 0, 0, 0],
              [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -190,7 +190,7 @@ const chooseDificulty = (level) => {
       }
     }
   }
-  difficultyLevelSelectionWindow.style.display = "none";
+  difficultyLevelSelectionWindow.style.display = "none";   
   welcomeUser.style.display = "none";
   //debugger;
   boardToHTML();
@@ -259,7 +259,7 @@ const deleteBoard = () => {
   setBoard(createInMemoryBoard());
 }
 
-const boardToHTML = () => {
+const boardToHTML = () => {                              //apending cells to game board
   const newGameBoard = createInMemoryBoard();
 
   for (let row = 0; row < 9; row++) {
@@ -274,7 +274,7 @@ const boardToHTML = () => {
 
 //**************************************************
 
-const openPopup = ({ top, left }) => {
+const openPopup = ({ top, left }) => {                
   const popup = document.getElementById('popup2');
   popup.style.left = left;
   popup.style.top = top;
@@ -291,7 +291,7 @@ const signIn = () => {
 }
 
 
-const enterForDifficultyWindow = () => {
+const enterForDifficultyWindow = () => {                              
   let userInput = document.getElementById('user').value;
   let passInput = document.getElementById('pass').value;
   if (logInUser(userInput, passInput)){
@@ -308,16 +308,16 @@ const enterForDifficultyWindow = () => {
 }
 
 
-window.onclick = closePopup;
+window.onclick = closePopup;  
 
-const again = () => {
+const again = () => {                                              //returning to choose dificulty window and reseting board
   gameBar.style.display ="none";
   deleteBoard();
   difficultyLevelSelectionWindow.style.display = "block";
   welcomeUser.style.display = "block";
 }
 
-const finish = () => {
+const finish = () => {                        //finis the game and show result
   let flag=0;
   for (let i = 0; i < 9; i++) {
     for (let j = 0; j < 9; j++) {
