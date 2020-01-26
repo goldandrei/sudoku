@@ -1,5 +1,5 @@
 //    ***********************************************
-//    * WELCOME TO ANDREI AND YOSSI'S SODOKU GAME   *
+//    * WELCOME TO ANDREI GOLDENBERG'S SODOKU GAME   *
 //    ***********************************************
 
 let idCellEdit;
